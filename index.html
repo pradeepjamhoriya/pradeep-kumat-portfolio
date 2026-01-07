@@ -1,0 +1,1641 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Pradeep Kumar | Portfolio</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- Google Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <!-- CSS -->
+  <style>/* =========================================================
+   PREMIUM PORTFOLIO CSS
+   Author: Senior UI/UX & Front-end Architect
+   Style: Dark • Glassmorphism • Cinematic • Modern
+   Comparable to Apple / Stripe / Vercel quality
+========================================================= */
+
+/* ================= ROOT VARIABLES ================= */
+:root {
+  /* Colors */
+  --bg-primary: #020617;
+  --bg-secondary: #020617;
+  --glass-bg: rgba(255, 255, 255, 0.06);
+  --glass-border: rgba(255, 255, 255, 0.12);
+
+  --text-primary: #e5e7eb;
+  --text-secondary: #94a3b8;
+
+  --accent-primary: #38bdf8;
+  --accent-secondary: #6366f1;
+
+  /* Spacing */
+  --space-xs: 8px;
+  --space-sm: 16px;
+  --space-md: 24px;
+  --space-lg: 48px;
+  --space-xl: 80px;
+
+  /* Radius */
+  --radius-sm: 10px;
+  --radius-md: 16px;
+  --radius-lg: 24px;
+
+  /* Shadows */
+  --shadow-soft: 0 10px 30px rgba(0,0,0,0.35);
+  --shadow-deep: 0 30px 80px rgba(0,0,0,0.65);
+
+  /* Transitions */
+  --transition-fast: 0.25s ease;
+  --transition-smooth: 0.45s cubic-bezier(.4,0,.2,1);
+}
+
+/* ================= RESET ================= */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: "Poppins", "Inter", system-ui, -apple-system, sans-serif;
+  background:
+    radial-gradient(1200px 600px at 10% -10%, rgba(2, 20, 33, 0.871), transparent 60%),
+    radial-gradient(1000px 500px at 90% 10%, rgba(2, 2, 23, 0.481), transparent 60%),
+    var(--bg-primary);
+  color: var(--text-primary);
+  line-height: 1.7;
+  overflow-x: hidden;
+}
+
+/* ================= GLOBAL ELEMENTS ================= */
+img {
+  max-width: 100%;
+  display: block;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+section {
+  padding: var(--space-xl) var(--space-md);
+}
+
+h1, h2, h3, h4 {
+  font-weight: 700;
+  letter-spacing: -0.02em;
+}
+
+h1 {
+  font-size: clamp(2.8rem, 5vw, 4rem);
+}
+
+h2 {
+  font-size: clamp(2rem, 4vw, 2.8rem);
+  margin-bottom: var(--space-md);
+}
+
+p {
+  color: var(--text-secondary);
+  max-width: 900px;
+}
+
+/* ===============================
+   HEADER BASE
+================================ */
+.header{
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 999;
+  background: rgb(245, 245, 246);
+  backdrop-filter: blur(22px) saturate(160%);
+  border-bottom: 5px solid rgba(91, 136, 199, 0.18);
+  transition: .4s ease;
+}
+
+.container{
+  max-width: 1280px;
+  margin: auto;
+  padding: 0 24px;
+}
+
+/* ===============================
+   NAV
+================================ */
+.nav{
+  height: 72px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* ===============================
+   LOGO
+================================ */
+.logo{
+  font-size: 26px;
+  font-weight: 800;
+  text-decoration: none;
+  color: #020617;
+}
+
+.logo span{
+  background: linear-gradient(135deg,#38bdf8,#6366f1);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* ===============================
+   MENU (DESKTOP)
+================================ */
+.menu{
+  list-style: none;
+  display: flex;
+  align-items: center;
+  gap: 26px;
+}
+
+.nav-link{
+  position: relative;
+  text-decoration: none;
+  font-size: 15px;
+  font-weight: 500;
+  color: #020617;
+  opacity: .85;
+  transition: .3s ease;
+}
+
+/* underline animation */
+.nav-link::after{
+  content:"";
+  position:absolute;
+  left:50%;
+  bottom:-6px;
+  width:0%;
+  height:2px;
+  background: linear-gradient(90deg,#38bdf8,#6366f1);
+  transform: translateX(-50%);
+  transition:.35s ease;
+}
+
+.nav-link:hover::after,
+.nav-link.active::after{
+  width:120%;
+}
+
+.nav-link:hover,
+.nav-link.active{
+  opacity:1;
+  color:#38bdf8;
+}
+/* ===============================
+   FOOTER
+================================ */
+
+.footer{
+  background: linear-gradient(180deg, #18043b, #050535);
+  padding: 60px 10% 20px;
+  color: #cbd5e1;
+  border-top: 1px solid rgba(255,255,255,0.08);
+}
+
+.footer-container{
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr;
+  gap: 40px;
+  max-width: 1200px;
+  margin: auto;
+}
+
+/* -------------------------------
+   FOOTER ABOUT
+-------------------------------- */
+
+.footer-about h3{
+  font-size: 1.6rem;
+  color: #ffffff;
+  margin-bottom: 10px;
+}
+
+.footer-about p{
+  font-size: 0.95rem;
+  line-height: 1.7;
+  color: #94a3b8;
+}
+
+/* -------------------------------
+   FOOTER LINKS
+-------------------------------- */
+
+.footer-links h4,
+.footer-social h4{
+  font-size: 1.2rem;
+  margin-bottom: 15px;
+  color: #ffffff;
+}
+
+.footer-links ul{
+  list-style: none;
+  padding: 0;
+}
+
+.footer-links li{
+  margin-bottom: 10px;
+}
+
+.footer-links a{
+  text-decoration: none;
+  color: #cbd5e1;
+  font-size: 0.95rem;
+  transition: 0.3s;
+}
+
+.footer-links a:hover{
+  color: #38bdf8;
+  padding-left: 5px;
+}
+
+/* -------------------------------
+   FOOTER SOCIAL
+-------------------------------- */
+
+.footer-social a{
+  display: block;
+  text-decoration: none;
+  color: #cbd5e1;
+  font-size: 0.95rem;
+  margin-bottom: 10px;
+  transition: 0.3s;
+}
+
+.footer-social a:hover{
+  color: #38bdf8;
+  transform: translateX(5px);
+}
+
+/* -------------------------------
+   FOOTER BOTTOM
+-------------------------------- */
+
+.footer-bottom{
+  margin-top: 40px;
+  text-align: center;
+  padding-top: 15px;
+  border-top: 1px solid rgba(255,255,255,0.08);
+}
+
+.footer-bottom p{
+  font-size: 0.85rem;
+  color: #94a3b8;
+}
+
+/* ===============================
+   RESPONSIVE
+================================ */
+
+@media (max-width: 900px){
+  .footer-container{
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (max-width: 600px){
+  .footer-container{
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+
+  .footer-links a:hover,
+  .footer-social a:hover{
+    padding-left: 0;
+    transform: none;
+  }
+}
+
+
+/* ===============================
+   HIRE ME BUTTON
+================================ */
+.nav-hire{
+  margin-left: 10px;
+}
+
+/* ===============================
+   HIRE ME BUTTON – ULTRA PREMIUM
+================================ */
+
+.hire-btn{
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+
+  padding: 11px 32px;
+  border-radius: 999px;
+
+  font-size: 14px;
+  font-weight: 800;
+  letter-spacing: .6px;
+  text-decoration: none;
+
+  color: #020617;
+  background: linear-gradient(
+    135deg,
+    #38bdf8,
+    #6366f1,
+    #22d3ee
+  );
+
+  background-size: 200% 200%;
+  animation: gradientMove 6s ease infinite;
+
+  box-shadow:
+    0 14px 35px rgba(56,189,248,.45),
+    0 0 0 rgba(0,0,0,0);
+
+  transition: all .45s cubic-bezier(.22,.61,.36,1);
+  overflow: hidden;
+}
+
+/* gradient animation */
+@keyframes gradientMove{
+  0%{ background-position: 0% 50%; }
+  50%{ background-position: 100% 50%; }
+  100%{ background-position: 0% 50%; }
+}
+
+/* glow ring */
+.hire-btn::after{
+  content:"";
+  position:absolute;
+  inset:-3px;
+  border-radius: inherit;
+  background: linear-gradient(
+    135deg,
+    rgba(56,189,248,.8),
+    rgba(99,102,241,.8),
+    rgba(34,211,238,.8)
+  );
+  filter: blur(14px);
+  opacity: .6;
+  z-index:-1;
+}
+
+/* shine sweep */
+.hire-btn::before{
+  content:"";
+  position:absolute;
+  inset:0;
+  background: linear-gradient(
+    120deg,
+    transparent,
+    rgba(255,255,255,.55),
+    transparent
+  );
+  transform: translateX(-120%);
+  transition: .7s ease;
+}
+
+.hire-btn:hover::before{
+  transform: translateX(120%);
+}
+
+.hire-btn:hover{
+  transform: translateY(-4px) scale(1.07);
+  box-shadow:
+    0 28px 80px rgba(56,189,248,.75),
+    0 0 40px rgba(56,189,248,.6);
+}
+
+/* click feel */
+.hire-btn:active{
+  transform: scale(.96);
+  box-shadow:
+    0 10px 30px rgba(56,189,248,.45);
+}
+
+/* focus (accessibility) */
+.hire-btn:focus-visible{
+  outline: none;
+  box-shadow:
+    0 0 0 3px rgba(56,189,248,.5),
+    0 28px 80px rgba(56,189,248,.75);
+}
+
+/* ===============================
+   MOBILE OPTIMIZATION
+================================ */
+@media(max-width: 900px){
+  .hire-btn{
+    padding: 14px 44px;
+    font-size: 16px;
+  }
+}
+
+/* ===============================
+   MOBILE TOGGLE
+================================ */
+.nav-toggle{
+  display: none;
+  width: 36px;
+  height: 26px;
+  cursor: pointer;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.nav-toggle span{
+  width: 100%;
+  height: 3px;
+  background: #e5e7eb;
+  border-radius: 6px;
+  transition: .4s ease;
+}
+
+/* ===============================
+   MOBILE MENU
+================================ */
+@media (max-width: 900px){
+
+  .nav-toggle{
+    display: flex;
+  }
+
+  .menu{
+    position: fixed;
+    top: 72px;
+    right: -100%;
+    width: 100%;
+    height: calc(100vh - 72px);
+    background: rgba(2,6,23,.96);
+    backdrop-filter: blur(22px);
+    flex-direction: column;
+    justify-content: center;
+    gap: 32px;
+    transition: right .45s ease;
+  }
+
+  .menu.show{
+    right: 0;
+  }
+
+  .nav-link{
+    font-size: 18px;
+  }
+
+  .hire-btn{
+    font-size: 16px;
+    padding: 14px 40px;
+  }
+}
+
+/* ===============================
+   HERO SECTION – WHITE THEME
+================================ */
+
+.hero{
+  min-height: 100vh;
+  display: grid;
+  grid-template-columns: 1.2fr 1fr;
+  align-items: center;
+  gap: 60px;
+
+  padding: 140px 80px 100px;
+
+  background:
+    radial-gradient(800px 400px at 10% -10%, rgba(37,99,235,.12), transparent 60%),
+    radial-gradient(700px 400px at 90% 10%, rgba(124,58,237,.12), transparent 60%),
+    #ffffff;
+
+  overflow: hidden;
+}
+
+/* ================= CONTENT ================= */
+.hero-content{
+  max-width: 620px;
+  animation: heroFadeUp 1.2s cubic-bezier(.22,.61,.36,1) forwards;
+}
+
+.hero-content h1{
+  font-size: clamp(44px, 6vw, 76px);
+  font-weight: 800;
+  line-height: 1.05;
+  margin-bottom: 18px;
+  letter-spacing: .5px;
+  color: #111827;
+}
+
+.hero-content h1 span{
+  background: linear-gradient(135deg,#2563eb,#7c3aed);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* subtitle */
+.hero-content p{
+  font-size: 18px;
+  color: #6b7280;
+  line-height: 1.7;
+  margin-bottom: 36px;
+}
+
+/* ================= BUTTONS ================= */
+.hero .buttons{
+  display: flex;
+  gap: 18px;
+  flex-wrap: wrap;
+}
+
+.hero .btn{
+  padding: 14px 38px;
+  border-radius: 999px;
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: .4px;
+  text-decoration: none;
+
+  background: linear-gradient(135deg,#2563eb,#06b6d4);
+  color: #ffffff;
+
+  box-shadow: 0 16px 40px rgba(37,99,235,.35);
+  transition: all .4s cubic-bezier(.22,.61,.36,1);
+}
+
+.hero .btn:hover{
+  transform: translateY(-4px) scale(1.05);
+  box-shadow: 0 28px 70px rgba(37,99,235,.45);
+}
+
+/* outline button */
+.hero .btn.outline{
+  background: transparent;
+  color: #2563eb;
+  border: 2px solid #2563eb;
+  box-shadow: none;
+}
+
+.hero .btn.outline:hover{
+  background: #2563eb;
+  color: #ffffff;
+}
+
+/* ================= IMAGE ================= */
+.hero-image{
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.hero-image img{
+  max-height: 520px;
+  width: auto;
+  border-radius: 24px;
+  box-shadow: 0 50px 90px rgba(17,24,39,.25);
+  animation: heroFloat 5s ease-in-out infinite;
+  z-index: 1;
+}
+
+/* soft glow */
+.hero-image::before{
+  content: "";
+  position: absolute;
+  width: 320px;
+  height: 320px;
+  background: radial-gradient(rgba(37,99,235,.35), transparent 70%);
+  filter: blur(90px);
+  z-index: 0;
+}
+
+/* ================= ANIMATIONS ================= */
+@keyframes heroFloat{
+  0%   { transform: translateY(0); }
+  50%  { transform: translateY(-12px); }
+  100% { transform: translateY(0); }
+}
+
+@keyframes heroFadeUp{
+  from{
+    opacity: 0;
+    transform: translateY(60px);
+  }
+  to{
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ================= RESPONSIVE ================= */
+@media(max-width: 992px){
+  .hero{
+    grid-template-columns: 1fr;
+    text-align: center;
+    padding: 140px 30px 80px;
+  }
+
+  .hero-content{
+    margin: auto;
+  }
+
+  .hero .buttons{
+    justify-content: center;
+  }
+
+  .hero-image{
+    margin-top: 60px;
+  }
+}
+
+@media(max-width: 480px){
+  .hero-content h1{
+    font-size: 38px;
+  }
+
+  .hero-content p{
+    font-size: 16px;
+  }
+}
+
+/* ===============================
+   EDUCATION SECTION
+================================ */
+
+#education{
+  padding: 80px 10%;
+  position: relative;
+}
+
+#education h2{
+  font-size: 2.4rem;
+  font-weight: 700;
+  margin-bottom: 40px;
+  color: #ffffff;
+  text-align: center;
+}
+
+/* -------------------------------
+   EDUCATION LIST
+-------------------------------- */
+
+#education ul{
+  list-style: none;
+  max-width: 900px;
+  margin: auto;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+#education li{
+  padding: 25px 30px;
+  background: rgba(255,255,255,0.05);
+  border-radius: 16px;
+  border: 1px solid rgba(255,255,255,0.08);
+  backdrop-filter: blur(10px);
+  position: relative;
+  transition: 0.35s ease;
+}
+
+/* Left timeline bar */
+#education li::before{
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 20px;
+  bottom: 20px;
+  width: 4px;
+  background: linear-gradient(180deg, #38bdf8, #6366f1);
+  border-radius: 10px;
+}
+
+/* Hover effect */
+#education li:hover{
+  transform: translateY(-6px);
+  background: rgba(255,255,255,0.1);
+}
+
+/* -------------------------------
+   TEXT STYLING
+-------------------------------- */
+
+#education strong{
+  font-size: 1.15rem;
+  color: #e5e7eb;
+}
+
+#education li br{
+  line-height: 1.6;
+}
+
+#education li{
+  font-size: 0.95rem;
+  color: #cbd5e1;
+  line-height: 1.7;
+}
+
+/* ===============================
+   RESPONSIVE
+================================ */
+
+@media (max-width: 768px){
+  #education{
+    padding: 70px 6%;
+  }
+
+  #education h2{
+    font-size: 2rem;
+  }
+
+  #education li{
+    padding: 22px 20px;
+  }
+}
+
+
+/* ================= BUTTONS ================= */
+.buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-sm);
+}
+
+.btn {
+  padding: 14px 28px;
+  border-radius: 999px;
+  background: linear-gradient(135deg, var(--accent-primary), var(--accent-secondary));
+  color: #020617;
+  font-weight: 600;
+  border: none;
+  cursor: pointer;
+  transition: var(--transition-smooth);
+  box-shadow: 0 10px 40px rgba(56,189,248,0.35);
+}
+
+.btn:hover {
+  transform: translateY(-3px) scale(1.02);
+}
+
+.btn.outline {
+  background: transparent;
+  color: var(--accent-primary);
+  border: 1px solid var(--accent-primary);
+  box-shadow: none;
+}
+
+/* ================= GLASS SECTIONS ================= */
+.section {
+  max-width: 1200px;
+  margin: auto;
+}
+
+.glass {
+  background: var(--glass-bg);
+  backdrop-filter: blur(18px);
+  border: 1px solid var(--glass-border);
+  border-radius: var(--radius-lg);
+  padding: var(--space-lg);
+  box-shadow: var(--shadow-soft);
+}
+
+/* ================= SKILLS GRID ================= */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  gap: var(--space-md);
+}
+
+.card {
+  background: var(--glass-bg);
+  backdrop-filter: blur(16px);
+  border: 1px solid var(--glass-border);
+  border-radius: var(--radius-md);
+  padding: var(--space-md);
+  text-align: center;
+  transition: var(--transition-smooth);
+}
+
+.card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 0 40px rgba(56,189,248,0.15);
+}
+/* ===============================
+   CERTIFICATES – DARK THEME
+================================ */
+
+#certificates{
+  background: transparent;
+}
+
+#certificates h2{
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+/* TABLE RESET */
+#certificates table{
+  width: 100%;
+  max-width: 950px;
+  margin: auto;
+  border-collapse: collapse;
+  background: rgba(15,23,42,0.75);
+  backdrop-filter: blur(18px);
+  border-radius: 18px;
+  overflow: hidden;
+  box-shadow: 0 25px 80px rgba(0,0,0,.6);
+  border: 1px solid rgba(148,163,184,.18);
+}
+
+/* REMOVE DEFAULT BORDERS */
+#certificates table,
+#certificates th,
+#certificates td{
+  border: none;
+}
+
+/* HEADER ROW */
+#certificates th{
+  padding: 30px 24px;
+  text-align:center;
+  font-size: 15px;
+  font-weight: 700;
+  color: #e5e7eb;
+  background: linear-gradient(
+    135deg,
+    rgba(56,189,248,.15),
+    rgba(99,102,241,.15)
+  );
+}
+
+/* TABLE ROWS */
+#certificates td{
+  padding: 18px 22px;
+  vertical-align: top;
+  color: #e5e7eb;
+  font-size: 14px;
+}
+
+/* DESCRIPTION TEXT */
+#certificates td small{
+  display: block;
+  margin-top: 6px;
+  font-size: 13px;
+  color: #94a3b8;
+  line-height: 1.6;
+}
+
+/* ROW DIVIDER */
+#certificates tr:not(:last-child){
+  border-bottom: 1px solid rgba(148,163,184,.18);
+}
+
+/* HOVER EFFECT */
+#certificates tr:hover{
+  background: rgba(56,189,248,.06);
+}
+
+/* VIEW LINK BUTTON */
+#certificates a{
+  display: inline-block;
+  padding: 8px 18px;
+  border-radius: 999px;
+  text-decoration: none;
+  font-size: 13px;
+  font-weight: 700;
+
+  color: #020617;
+  background: linear-gradient(135deg,#38bdf8,#6366f1);
+
+  box-shadow: 0 10px 30px rgba(56,189,248,.45);
+  transition: .35s cubic-bezier(.22,.61,.36,1);
+}
+
+/* BUTTON HOVER */
+#certificates a:hover{
+  transform: translateY(-3px) scale(1.05);
+  box-shadow: 0 22px 60px rgba(56,189,248,.75);
+}
+
+/* CENTER VIEW COLUMN */
+#certificates td:last-child{
+  text-align: center;
+}
+
+/* ===============================
+   RESPONSIVE
+================================ */
+@media(max-width: 700px){
+  #certificates table{
+    font-size: 13px;
+  }
+
+  #certificates td,
+  #certificates th{
+    padding: 14px 16px;
+  }
+
+  #certificates td:last-child{
+    text-align: left;
+  }
+}
+
+/* ================= ACTIVITIES ================= */
+.activity-list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-md);
+}
+
+.activity-row {
+  display: flex;
+  gap: var(--space-md);
+  background: var(--glass-bg);
+  border: 1px solid var(--glass-border);
+  border-radius: var(--radius-lg);
+  padding: var(--space-md);
+  transition: var(--transition-smooth);
+}
+
+.activity-row:hover {
+  transform: translateY(-6px);
+}
+
+.activity-row img {
+  width: 500px;
+  height: 350px;
+  object-fit: cover;
+  border-radius: var(--radius-md);
+}
+
+/* ================= DECLARATION ================= */
+.declaration-container {
+  display: grid;
+  grid-template-columns: 1fr 1.5fr;
+  gap: var(--space-lg);
+  align-items: center;
+}
+
+.declaration-photo img {
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-deep);
+  height: 300px;
+  
+}
+
+.footer {
+    background: #020617;
+    color: #fff;
+    padding: 40px 0 10px;
+    font-family: Arial, sans-serif;
+}
+
+.footer-container {
+    width: 90%;
+    max-width: 1100px;
+    margin: auto;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+    justify-content: space-between;
+}
+
+.footer h3, .footer h4 {
+    margin-bottom: 10px;
+}
+
+.footer p {
+    font-size: 14px;
+    color: #cbd5e1;
+}
+
+.footer-links ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-links ul li {
+    margin-bottom: 8px;
+}
+
+.footer-links a,
+.footer-social a {
+    color: #94a3b8;
+    text-decoration: none;
+    font-size: 14px;
+}
+
+.footer-links a:hover,
+.footer-social a:hover {
+    color: #38bdf8;
+}
+
+.footer-social a {
+    display: block;
+    margin-bottom: 8px;
+}
+
+.footer-bottom {
+    border-top: 1px solid #1e293b;
+    text-align: center;
+    margin-top: 20px;
+    padding-top: 10px;
+    font-size: 13px;
+    color: #94a3b8;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .footer-container {
+        flex-direction: column;
+        text-align: center;
+    }
+}
+
+/* ================= ANIMATIONS ================= */
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-14px);
+  }
+}
+
+/* ================= RESPONSIVE ================= */
+@media (max-width: 900px) {
+  .hero {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+
+  .declaration-container {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+
+  .activity-row {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .menu {
+    display: none;
+  }
+}
+
+/* =========================================================
+   DESIGN GOAL:
+   Comparable to Apple / Stripe / Vercel style websites
+========================================================= */</style>
+
+  <!-- JS -->
+  <script>(() => {
+  "use strict";
+
+  const qs = (s, c = document) => c.querySelector(s);
+  const qsa = (s, c = document) => [...c.querySelectorAll(s)];
+
+  const state = {
+    ticking: false,
+    activeModal: null,
+    lastScrollY: window.scrollY
+  };
+
+  /* =======================
+     SMOOTH SCROLL + NAV
+  ======================= */
+  const nav = qs(".header");
+  const navLinks = qsa('.menu a');
+
+  navLinks.forEach(link => {
+    link.addEventListener("click", e => {
+      const id = link.getAttribute("href");
+      if (id.startsWith("#")) {
+        e.preventDefault();
+        qs(id)?.scrollIntoView({ behavior: "smooth", block: "start" });
+      }
+    });
+  });
+
+  const updateActiveNav = () => {
+    const pos = window.scrollY + 120;
+    navLinks.forEach(link => {
+      const sec = qs(link.getAttribute("href"));
+      if (!sec) return;
+      link.classList.toggle(
+        "active",
+        pos >= sec.offsetTop && pos < sec.offsetTop + sec.offsetHeight
+      );
+    });
+  };
+
+  const handleNavScroll = () => {
+    if (window.scrollY > state.lastScrollY && window.scrollY > 80) {
+      nav.classList.add("nav-hide");
+    } else {
+      nav.classList.remove("nav-hide");
+    }
+    state.lastScrollY = window.scrollY;
+    updateActiveNav();
+  };
+
+  window.addEventListener("scroll", () => {
+    if (!state.ticking) {
+      requestAnimationFrame(() => {
+        handleNavScroll();
+        state.ticking = false;
+      });
+      state.ticking = true;
+    }
+  });
+  
+
+  /* =======================
+     INTERSECTION REVEALS
+  ======================= */
+  const revealObserver = new IntersectionObserver(
+    entries => {
+      entries.forEach((e, i) => {
+        if (e.isIntersecting) {
+          e.target.style.transitionDelay = `${i * 60}ms`;
+          e.target.classList.add("in-view");
+          revealObserver.unobserve(e.target);
+        }
+      });
+    },
+    { threshold: 0.15 }
+  );
+
+  qsa("section, .card, .activity-row, img, button").forEach(el => {
+    el.classList.add("reveal");
+    revealObserver.observe(el);
+  });
+
+  /* =======================
+     HERO TEXT ANIMATION
+  ======================= */
+  const heroTitle = qs(".hero h1");
+  if (heroTitle) {
+    const text = heroTitle.innerText;
+    heroTitle.innerHTML = "";
+    [...text].forEach((char, i) => {
+      const span = document.createElement("span");
+      span.textContent = char;
+      span.style.animationDelay = `${i * 40}ms`;
+      heroTitle.appendChild(span);
+    });
+    heroTitle.classList.add("hero-animate");
+  }
+
+  /* =======================
+     BUTTON MICRO INTERACTIONS
+  ======================= */
+  qsa("button, .btn").forEach(btn => {
+    btn.addEventListener("pointerdown", () => btn.classList.add("pressed"));
+    btn.addEventListener("pointerup", () => btn.classList.remove("pressed"));
+    btn.addEventListener("pointerleave", () => btn.classList.remove("pressed"));
+  });
+
+  /* =======================
+     LAZY IMAGES
+  ======================= */
+  const imgObserver = new IntersectionObserver(
+    entries => {
+      entries.forEach(e => {
+        if (e.isIntersecting) {
+          const img = e.target;
+          if (img.dataset.src) img.src = img.dataset.src;
+          img.classList.add("img-loaded");
+          imgObserver.unobserve(img);
+        }
+      });
+    },
+    { rootMargin: "200px" }
+  );
+
+  qsa("img").forEach(img => imgObserver.observe(img));
+
+  /* =======================
+     MODAL SYSTEM
+  ======================= */
+  const openModal = content => {
+    closeModal();
+    const overlay = document.createElement("div");
+    overlay.className = "modal-overlay";
+    overlay.tabIndex = -1;
+
+    const modal = document.createElement("div");
+    modal.className = "modal";
+    modal.innerHTML = content;
+
+    overlay.appendChild(modal);
+    document.body.appendChild(overlay);
+    document.body.style.overflow = "hidden";
+    state.activeModal = overlay;
+
+    requestAnimationFrame(() => overlay.classList.add("open"));
+
+    overlay.addEventListener("click", e => {
+      if (e.target === overlay) closeModal();
+    });
+
+    document.addEventListener("keydown", escHandler);
+  };
+
+  const closeModal = () => {
+    if (!state.activeModal) return;
+    const overlay = state.activeModal;
+    overlay.classList.remove("open");
+    setTimeout(() => overlay.remove(), 300);
+    document.body.style.overflow = "";
+    state.activeModal = null;
+    document.removeEventListener("keydown", escHandler);
+  };
+
+  const escHandler = e => e.key === "Escape" && closeModal();
+
+  /* =======================
+     HIRE ME MODAL
+  ======================= */
+  const workBtn = qs("#workBtn");
+  if (workBtn) {
+    workBtn.addEventListener("click", () => {
+      openModal(`
+        <div class="work-modal">
+          <h3>HIRE ME</h3>
+          <a href="tel:+918461998146">📞 Call Me</a>
+          <a href="mailto:pradeepjamhoriya18@gmail.com">📧 Email Me</a>
+          <a href="https://wa.me/918461998146" target="_blank">💬 WhatsApp Me</a>
+        </div>
+      `);
+    });
+  }
+
+  /* =======================
+     CERTIFICATE MODAL
+  ======================= */
+  qsa("[data-cert]").forEach(btn => {
+    btn.addEventListener("click", e => {
+      e.preventDefault();
+      const src = btn.dataset.cert;
+      const isPdf = src.endsWith(".pdf");
+      openModal(`
+        <div class="cert-modal">
+          <button class="modal-close">×</button>
+          ${
+            isPdf
+              ? `<iframe src="${src}" frameborder="0"></iframe>`
+              : `<img src="${src}" alt="Certificate">`
+          }
+        </div>
+      `);
+      qs(".modal-close")?.addEventListener("click", closeModal);
+    });
+  });
+
+  /* =======================
+     CONTACT FORM
+  ======================= */
+  const form = qs("form");
+  if (form) {
+    const inputs = qsa("input, textarea", form);
+
+    inputs.forEach(i => {
+      i.addEventListener("focus", () => i.classList.add("focus"));
+      i.addEventListener("blur", () => i.classList.remove("focus"));
+    });
+
+    form.addEventListener("submit", e => {
+      e.preventDefault();
+      let valid = true;
+
+      inputs.forEach(i => {
+        if (!i.value.trim()) {
+          i.classList.add("error");
+          valid = false;
+          setTimeout(() => i.classList.remove("error"), 600);
+        }
+      });
+
+      if (valid) {
+        form.classList.add("success");
+        setTimeout(() => form.classList.remove("success"), 1200);
+        form.reset();
+      }
+    });
+  }
+})();</script>
+</head>
+<body>
+
+<!-- ================= HEADER ================= -->
+<header class="header">
+  <nav class="nav container">
+
+    <!-- Logo -->
+    <a href="#home" class="logo">
+      Pradeep<span>Kumar</span>
+    </a>
+
+    <!-- Navigation Menu -->
+    <ul class="menu" id="nav-menu">
+      <li><a href="#home" class="nav-link active">Home</a></li>
+      <li><a href="#about" class="nav-link">About</a></li>
+      <li><a href="#skills" class="nav-link">Skills</a></li>
+      <li><a href="#education" class="nav-link">Education</a></li>
+      <li><a href="#certificates" class="nav-link">Certificates</a></li>
+      <li><a href="#activities" class="nav-link">Activities</a></li>
+      <li><a href="#contact" class="nav-link">Contact</a></li>
+
+      <!-- Hire Me Button -->
+      <li class="nav-hire">
+        <a href="mailto:pradeepjamhoriya18@gmail.com?subject=Work With Pradeep Kumar" class="hire-btn">Hire Me</a>
+      </li>
+    </ul>
+
+    <!-- Mobile Toggle -->
+    <div class="nav-toggle" id="nav-toggle">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+
+  </nav>
+</header>
+
+
+<!-- ================= HERO ================= -->
+<section id="home" class="hero">
+  <div class="hero-content">
+    <h1>Pradeep <span>Kumar</span></h1>
+    <p>
+      B.Tech Computer Science Engineering Student <br>
+      Passionate Web Developer, Creative Learner & Technology Enthusiast
+    </p>
+
+    <div class="buttons">
+      <a href="https://i.ibb.co/Xxjj182y/resume.jpg" class="btn">Download Resume</a>
+      <a href="#contact" class="btn outline">Contact Me</a>
+    </div>
+  </div>
+
+  <div class="hero-image">
+    <img src="https://i.ibb.co/qLnT8vnb/pradeep84.jpg" alt="Pradeep Kumar">
+  </div>
+</section>
+
+<!-- ================= ABOUT ================= -->
+<section id="about" class="section">
+  <h2>About Me</h2>
+  <p>
+    I am a dedicated and motivated B.Tech Computer Science Engineering student
+    with a strong passion for web development, programming, UI/UX design, and
+    emerging digital technologies. I believe in continuous learning and
+    self-improvement through practical implementation and hands-on experience.
+  </p>
+  <p>
+    I actively work on enhancing my technical skills by building real-world
+    projects, exploring modern tools, and learning new technologies beyond
+    the academic syllabus. Along with technical knowledge, I also focus on
+    improving my communication skills, problem-solving ability, and creative
+    thinking.
+  </p>
+  <p>
+    I am enthusiastic about participating in workshops, competitions, and
+    college-level activities as they help me gain confidence, leadership
+    experience, and exposure to collaborative teamwork environments.
+  </p>
+</section>
+
+<!-- ================= SKILLS ================= -->
+<section id="skills" class="section">
+  <h2>Skills</h2>
+  <p>
+    Below are the technical and creative skills that I have developed through
+    academic learning, self-practice, workshops, and hands-on project work.
+  </p>
+
+  <div class="grid">
+    <div class="card">HTML</div>
+    <div class="card">CSS</div>
+    <div class="card">JavaScript (Basic)</div>
+    <div class="card">C</div>
+    <div class="card">C++ (Basic)</div>
+    <div class="card">Java (Basic)</div>
+    <div class="card">Python</div>
+    <div class="card">MySQL</div>
+    <div class="card">UI / UX Design</div>
+    <div class="card">AI Tools</div>
+  </div>
+</section>
+
+<!-- ================= EDUCATION ================= -->
+<section id="education" class="section">
+  <h2>Education</h2>
+  <ul>
+    <li>
+      <strong>B.Tech – Computer Science Engineering</strong><br>
+      Shri Ram College of Engineering and Management, RGPV Bhopal<br>
+      Currently pursuing undergraduate studies with focus on programming,
+      web technologies, and core computer science concepts.
+    </li>
+    <br>
+    <li>
+      <strong>Higher Secondary (12th)</strong><br>
+      Government Excellence School, Ambah – 78%<br>
+      Completed with Science stream, building a strong foundation in
+      mathematics and analytical reasoning.
+    </li>
+    <br>
+    <li>
+      <strong>High School (10th)</strong><br>
+      Government Excellence School, Ambah – 88%<br>
+      Achieved excellent academic performance reflecting consistency and discipline.
+    </li>
+  </ul>
+</section>
+
+<!-- ================= CERTIFICATES ================= -->
+<section id="certificates" class="section">
+  <h2>Certificates</h2>
+
+  <table border="1" cellpadding="10" cellspacing="0" width="100%">
+    <tr>
+      <th align="left">Certificate</th>
+      <th align="center">View</th>
+    </tr>
+
+    <tr>
+      <td>
+        Web Design Workshop (HTML & CSS)<br>
+        <small>Hands-on training focused on modern HTML structure and CSS styling</small>
+      </td>
+      <td align="center">
+        <a href="https://i.ibb.co/RGpzBjbR/IMG-20251227-094250.jpg" target="_blank">See Certificate</a>
+      </td>
+    </tr>
+
+    <tr>
+      <td>
+        HTML Certificate – Codeliber<br>
+        <small>Certified course covering HTML fundamentals and best practices</small>
+      </td>
+      <td align="center">
+        <a href="https://lnkd.in/dCwjsebG" target="_blank">See Certificate</a>
+      </td>
+    </tr>
+ <tr>
+      <td>
+       General Knowledge Quiz<br>
+        <small>Participated in quiz competitions to enhance awareness,
+          logical thinking, and confidence.</small>
+      </td>
+      <td align="center">
+        <a href="https://i.ibb.co/bgxYZzvK/SAVE-20260107-133343.jpg" target="_blank">See Certificate</a>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        Placement Coordinator (2024) – Evince Development Company<br>
+        <small>Experience in coordination, communication, and organizational tasks</small>
+      </td>
+      <td align="center">
+        <a href="https://i.ibb.co/TqPpbLPN/evince-dev.jpg " target="_blank">See Certificate</a>
+      </td>
+    </tr>
+  </table>
+</section>
+
+<!-- ================= ACTIVITIES ================= -->
+<section id="activities" class="section">
+  <h2>Extra-Curricular Activities</h2>
+
+  <div class="activity-list">
+
+    <div class="activity-row">
+      <img src="https://i.ibb.co/FC9YCpr/IMG-20260107-181559.png" alt="Bottle Rocket">
+      <div>
+        <h4>Bottle Rocket Competition</h4>
+        <p>
+          Secured 2nd Position in Fun Fiesta 2024 by demonstrating creativity,
+          teamwork, and basic engineering principles.
+        </p>
+      </div>
+    </div>
+
+    <div class="activity-row">
+      <img src="https://i.ibb.co/zW96bzJP/file-00000000137871fda243b89ee89448aa.png" alt="ED Club">
+      <div>
+        <h4>ED Club Member</h4>
+        <p>
+          Active member contributing to academic, technical, and student
+          development activities within the college.
+        </p>
+      </div>
+    </div>
+
+    <div class="activity-row">
+      <img src="https://i.ibb.co/5Xd47GgV/IMG-20260107-144814.jpg" alt="Utkrist Club">
+      <div>
+        <h4>Utkrist Club</h4>
+        <p>
+          Member of the Utkrist Club focused on excellence, leadership,
+          and personality development.
+        </p>
+      </div>
+    </div>
+
+   
+</section>
+
+<!-- ================= DECLARATION ================= -->
+<section id="declaration" class="section declaration">
+  <div class="declaration-container">
+
+    <div class="declaration-photo">
+      <img src="https://i.ibb.co/qLnT8vnb/pradeep84.jpg" alt="Pradeep Kumar">
+    </div>
+
+    <div class="declaration-content">
+      <h2>Declaration</h2>
+      <p>
+        I hereby declare that all the information furnished in this portfolio is
+        true, complete, and correct to the best of my knowledge and belief.
+        I take full responsibility for the authenticity of the academic,
+        technical, and personal details mentioned above.
+      </p>
+      <h4>Pradeep Kumar</h4>
+      <span>B.Tech Computer Science Engineering</span>
+    </div>
+
+  </div>
+</section>
+
+<!-- ================= CONTACT ================= -->
+<section id="contact" class="section contact">
+  <h2>Contact</h2>
+  <p>Email: pradeepjamhoriya18@gmail.com</p>
+  <p>Phone: +91 84619 98146</p>
+  <p>Address: Ambah, Morena District, MP – 476111</p>
+</section>
+
+<footer class="footer">
+    <div class="footer-container">
+
+        <div class="footer-about">
+            <h3>Pradeep Kumar</h3>
+            <p>
+                Computer Science Engineering Student | Web Developer  
+                Passionate about creating modern websites.
+            </p>
+        </div>
+
+        <div class="footer-links">
+            <h4>Quick Links</h4>
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">About</a></li>
+                
+                <li><a href="#">Contact</a></li>
+            </ul>
+        </div>
+
+        <div class="footer-social">
+            <h4>Follow Me</h4>
+            <a href="https://www.instagram.com/mr.pradeep_jamhoriya">instagram</a>
+            <a href="https://www.instagram.com/mr.pradeep_jamhoriya">YouTube</a>
+            <a href="https://github.com/pradeepjamhoriya">GitHub</a>
+            <a href="https://www.linkedin.com/in/pradeep-kumar-4a883a37a">LinkedIn</a>
+        </div>
+
+    </div>
+
+    <div class="footer-bottom">
+        <p>© 2026 Pradeep Kumar | All Rights Reserved</p>
+    </div>
+</footer>
+
+</body>
+</html>
