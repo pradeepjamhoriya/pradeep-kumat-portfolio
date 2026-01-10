@@ -2,8 +2,22 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Pradeep Kumar | Portfolio</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>Pradeep Kumar | Web Developer Portfolio</title>
+
+  <meta name="description" content="Pradeep Kumar is a Web Developer and Computer Science Engineering student from Ambah, Morena (MP). Skilled in HTML, CSS, JavaScript and UI/UX Design.">
+
+  <!-- SEO META TAGS -->
+<meta name="description" content="Pradeep Kumar - B.Tech Computer Science Engineering Student, Web Developer skilled in HTML, CSS, JavaScript, Python, MySQL and UI/UX Design.">
+<meta name="keywords" content="Pradeep Kumar, Web Developer, Portfolio, HTML CSS JavaScript, Computer Science Student">
+<meta name="author" content="Pradeep Kumar">
+
+<!-- Open Graph (for sharing) -->
+<meta property="og:title" content="Pradeep Kumar | Portfolio">
+<meta property="og:description" content="Web Developer & CSE Student Portfolio">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://yourusername.github.io/portfolio/">
+<meta property="og:image" content="https://yourusername.github.io/portfolio/images/profile.jpg">
+
 
   <!-- Google Font -->
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
@@ -119,7 +133,7 @@ p {
   z-index: 999;
   background: rgb(245, 245, 246);
   backdrop-filter: blur(22px) saturate(160%);
-  border-bottom: 5px solid rgba(91, 136, 199, 0.18);
+  border-bottom: 2px solid rgba(43, 43, 43, 0.18);
   transition: .4s ease;
 }
 
@@ -400,7 +414,7 @@ p {
   background: linear-gradient(
     120deg,
     transparent,
-    rgba(255,255,255,.55),
+    rgba(219, 217, 217, 0.55),
     transparent
   );
   transform: translateX(-120%);
@@ -443,62 +457,56 @@ p {
   }
 }
 
-/* ===============================
-   MOBILE TOGGLE
-================================ */
-.nav-toggle{
-  display: none;
-  width: 36px;
-  height: 26px;
-  cursor: pointer;
-  flex-direction: column;
-  justify-content: space-between;
-}
 
-.nav-toggle span{
-  width: 100%;
-  height: 3px;
-  background: #e5e7eb;
-  border-radius: 6px;
-  transition: .4s ease;
-}
+/* ================= MOBILE NAVBAR FIX ================= */
 
-/* ===============================
-   MOBILE MENU
-================================ */
-@media (max-width: 900px){
+@media (max-width: 900px) {
 
   .nav-toggle{
     display: flex;
+    flex-direction: column;
+    gap: 6px;
+    cursor: pointer;
+    z-index: 5000;
+  }
+
+  .nav-toggle span{
+    width: 30px;
+    height: 3px;
+    background: #020617;
+    border-radius: 5px;
+    transition: 0.3s;
   }
 
   .menu{
     position: fixed;
     top: 72px;
-    right: -100%;
+    left: 0;
     width: 100%;
     height: calc(100vh - 72px);
-    background: rgba(2,6,23,.96);
-    backdrop-filter: blur(22px);
+    background: #020617;
+
+    display: flex;
     flex-direction: column;
     justify-content: center;
-    gap: 32px;
-    transition: right .45s ease;
+    align-items: center;
+    gap: 28px;
+
+    transform: translateX(100%);
+    transition: transform 0.35s ease;
+    z-index: 4000;
   }
 
   .menu.show{
-    right: 0;
+    transform: translateX(0);
   }
 
-  .nav-link{
+  .menu a{
+    color: #ffffff;
     font-size: 18px;
   }
-
-  .hire-btn{
-    font-size: 16px;
-    padding: 14px 40px;
-  }
 }
+
 
 /* ===============================
    HERO SECTION – WHITE THEME
@@ -1083,25 +1091,59 @@ p {
   }
 }
 
-/* ================= RESPONSIVE ================= */
-@media (max-width: 900px) {
-  .hero {
-    grid-template-columns: 1fr;
-    text-align: center;
+  @media(max-width:900px){
+  .nav-toggle{
+    display:flex;
+    z-index: 3000;   /* 🔥 ABOVE EVERYTHING */
+  }
+}
+
+
+ @media (max-width: 900px) {
+
+  .nav-toggle{
+    display: flex;
+    z-index: 5000;
   }
 
-  .declaration-container {
-    grid-template-columns: 1fr;
-    text-align: center;
-  }
+  .menu{
+    position: fixed;
+    top: 72px;
+    left: 0;
+    width: 100%;
+    height: calc(100vh - 72px);
 
-  .activity-row {
+    background: #020617;
+
+    display: flex;
     flex-direction: column;
-    text-align: center;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+
+    transform: translateX(100%);
+    transition: transform 0.4s ease;
+    z-index: 4000;
   }
 
-  .menu {
-    display: none;
+  .menu.show{
+    transform: translateX(0);
+  }
+}
+
+
+  .menu.show{
+    right: 0;
+  }
+
+@media(max-width:900px){
+
+  .header{
+    z-index: 1000;
+  }
+
+  .menu{
+    z-index: 2000;   /* 🔥 THIS IS THE FIX */
   }
 }
 
@@ -1346,7 +1388,36 @@ p {
       }
     });
   }
+  /* ===============================
+   MOBILE NAV TOGGLE – FIX
+================================ */
+const navToggle = document.getElementById("nav-toggle");
+const navMenu = document.getElementById("nav-menu");
+
+if (navToggle && navMenu) {
+  navToggle.addEventListener("click", () => {
+    navMenu.classList.toggle("show");
+    navToggle.classList.toggle("open");
+  });
+
+  navMenu.querySelectorAll("a").forEach(link => {
+    link.addEventListener("click", () => {
+      navMenu.classList.remove("show");
+      navToggle.classList.remove("open");
+    });
+  });
+}
+
 })();</script>
+<script>
+const toggle = document.getElementById("nav-toggle");
+const menu = document.getElementById("nav-menu");
+
+toggle.addEventListener("click", () => {
+  menu.classList.toggle("show");
+});
+</script>
+
 </head>
 <body>
 
@@ -1377,7 +1448,7 @@ p {
 
     <!-- Mobile Toggle -->
     <div class="nav-toggle" id="nav-toggle">
-      <span></span>
+      <Span></Span>
       <span></span>
       <span></span>
     </div>
@@ -1387,6 +1458,7 @@ p {
 
 
 <!-- ================= HERO ================= -->
+ 
 <section id="home" class="hero">
   <div class="hero-content">
     <h1>Pradeep <span>Kumar</span></h1>
@@ -1396,13 +1468,13 @@ p {
     </p>
 
     <div class="buttons">
-      <a href="https://i.ibb.co/Xxjj182y/resume.jpg" class="btn">Download Resume</a>
+      <a href="https://i.ibb.co/pBFRrxjh/Pradeep-Kumar-resume-1-1-1.jpg" class="btn">Download Resume</a>
       <a href="#contact" class="btn outline">Contact Me</a>
     </div>
   </div>
 
   <div class="hero-image">
-    <img src="https://i.ibb.co/qLnT8vnb/pradeep84.jpg" alt="Pradeep Kumar">
+    <img src="https://i.ibb.co/qLnT8vnb/pradeep84.jpg" alt="Pradeep Kumar-web-developer">
   </div>
 </section>
 
@@ -1444,7 +1516,7 @@ p {
     <div class="card">C</div>
     <div class="card">C++ (Basic)</div>
     <div class="card">Java (Basic)</div>
-    <div class="card">Python</div>
+    <div class="card">Python(basic)</div>
     <div class="card">MySQL</div>
     <div class="card">UI / UX Design</div>
     <div class="card">AI Tools</div>
@@ -1457,21 +1529,21 @@ p {
   <ul>
     <li>
       <strong>B.Tech – Computer Science Engineering</strong><br>
-      Shri Ram College of Engineering and Management, RGPV Bhopal<br>
+      Shri Ram College of Engineering and Management, RGPV Bhopal | 2024-2028<br>
       Currently pursuing undergraduate studies with focus on programming,
       web technologies, and core computer science concepts.
     </li>
     <br>
     <li>
       <strong>Higher Secondary (12th)</strong><br>
-      Government Excellence School, Ambah – 78%<br>
+      Government Excellence School, Ambah | 2024 – 78%<br>
       Completed with Science stream, building a strong foundation in
       mathematics and analytical reasoning.
     </li>
     <br>
     <li>
       <strong>High School (10th)</strong><br>
-      Government Excellence School, Ambah – 88%<br>
+      Government Excellence School, Ambah | 2022 – 88%<br>
       Achieved excellent academic performance reflecting consistency and discipline.
     </li>
   </ul>
@@ -1518,7 +1590,7 @@ p {
     </tr>
     <tr>
       <td>
-        Placement Coordinator (2024) – Evince Development Company<br>
+        Placement Coordinator (2024) – Evince Development Company | 17may,2025<br>
         <small>Experience in coordination, communication, and organizational tasks</small>
       </td>
       <td align="center">
@@ -1598,7 +1670,7 @@ p {
   <h2>Contact</h2>
   <p>Email: pradeepjamhoriya18@gmail.com</p>
   <p>Phone: +91 84619 98146</p>
-  <p>Address: Ambah, Morena District, MP – 476111</p>
+  <p>Address: Ambah, distt.Morena, (MP) – 476111</p>
 </section>
 
 <footer class="footer">
@@ -1624,8 +1696,8 @@ p {
 
         <div class="footer-social">
             <h4>Follow Me</h4>
-            <a href="https://www.instagram.com/mr.pradeep_jamhoriya">instagram</a>
-            <a href="https://www.youtube.com/@psstudy4550">YouTube</a>
+            <a href="https://www.instagram.com/pradeep_kumar_web?igsh=bzB6cjJyc3o0ang=">instagram</a>
+            <a href="https://youtube.com/@psstudy4550?si=Ggm6-yfLPS71fw4l">YouTube</a>
             <a href="https://github.com/pradeepjamhoriya">GitHub</a>
             <a href="https://www.linkedin.com/in/pradeep-kumar-4a883a37a">LinkedIn</a>
         </div>
@@ -1633,11 +1705,23 @@ p {
     </div>
 
     <div class="footer-bottom">
-        <p>© 2026 Pradeep Kumar | All Rights Reserved</p>
+        <p>© 2026 Pradeep Kumar-web-developer | All Rights Reserved</p>
     </div>
 </footer>
+<script>
+const navToggle = document.getElementById("nav-toggle");
+const navMenu = document.getElementById("nav-menu");
+
+navToggle.addEventListener("click", () => {
+  navMenu.classList.toggle("show");
+});
+
+document.querySelectorAll(".menu a").forEach(link => {
+  link.addEventListener("click", () => {
+    navMenu.classList.remove("show");
+  });
+});
+</script>
 
 </body>
-
 </html>
-
